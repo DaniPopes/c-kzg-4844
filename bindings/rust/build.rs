@@ -140,9 +140,6 @@ fn make_bindings<P>(
         .derive_eq(true)
         // Blobs are big, we don't want rust to liberally copy them around.
         .no_copy("Blob")
-        // Do not make fields public. If we want to modify them we can create setters/mutable
-        // getters when necessary.
-        .default_visibility(bindgen::FieldVisibilityKind::Private)
         // Blocklist this type alias to use a custom implementation. If this stops being a type
         // alias this line needs to be removed.
         .blocklist_type("KZGCommitment")
